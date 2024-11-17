@@ -146,7 +146,7 @@ class MainTest {
         controller = new DeveloperController(new DeveloperTax());
         // Simulate @PostConstruct call if necessary. In reality, this is managed by Spring.
         controller.init();
-        Developer developer = new Developer(1, "Initial Developer", 5000.0, Experience.JUNIOR);
+        Developer developer = new Developer(1, "s", 5000.0, Experience.JUNIOR);
         mockMvc.perform(post("/developers")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(developer)))
