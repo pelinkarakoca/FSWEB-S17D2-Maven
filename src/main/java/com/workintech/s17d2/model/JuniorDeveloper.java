@@ -5,4 +5,7 @@ public class JuniorDeveloper extends Developer{
 		super(id, name, salary, Experience.JUNIOR);
 	}
 
+public JuniorDeveloper(Developer developer, double calculatedSalary){
+		super(developer.getId(), developer.getName(), calculatedSalary, Experience.JUNIOR );
+}
 }

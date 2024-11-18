@@ -46,10 +46,10 @@ public class DeveloperController {
 	@PostMapping("/developers")
 	@ResponseStatus(HttpStatus.CREATED)
 	public void addDevelopers(@RequestBody Developer developer){
-		System.out.println("test");
+
 		switch (developer.getExperience()){
 			case JUNIOR:
-				Developer developerJ = new JuniorDeveloper(developer.getId(), developer.getName(), developer.getSalary()- developerTax.getSimpleTaxRate());
+				Developer developerJ = new JuniorDeveloper(developer, developer.getSalary() - developerTax.getSimpleTaxRate());
 				developers.put(developer.getId(), developerJ);
 				break;
 			case MID:
